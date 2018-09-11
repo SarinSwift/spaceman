@@ -75,7 +75,8 @@ def spaceman(secret_word):
     all_letters_guessed = ""
 
     while guesses > 0 and is_word_guessed(secret_word, all_letters_guessed) == False:
-        letters_guessed = input("Take a guess of the letters in the secret word: ")
+        letters_guessed = input("\nTake a guess of the letters in the secret word: ")
+        letters_guessed = letters_guessed.lower()
         if validate_input(letters_guessed):
             all_letters_guessed += letters_guessed
 
@@ -94,7 +95,7 @@ def spaceman(secret_word):
     if is_word_guessed(secret_word, all_letters_guessed):
         print("CONGRATULATIONS! You won!")
     else:
-        print("GAME OVER. You lost!")
+        print("\nGAME OVER. You lost!")
         print("The secret word was: {}".format(secret_word))
 
 
